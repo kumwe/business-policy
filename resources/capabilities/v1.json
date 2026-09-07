@@ -1,16 +1,9 @@
 {
-    "schema": "kumwe-capabilities/v1",
+    "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/business-policy",
     "release": "0.1.1",
-    "capabilities": [
-        "bounded-policy-ast",
-        "schema-reference-validation",
-        "deterministic-deny-precedence",
-        "exact-decimal-comparison",
-        "field-use-disclosure",
-        "access-plan-digests"
-    ],
-    "corpus": "resources/policy-corpus/v1.json",
+    "namespace": "Kumwe\\BusinessPolicy\\",
+    "responsibility": "Closed bounded record policy language, deterministic evaluation, field disclosure and immutable access plans.",
     "non_responsibilities": [
         "final authorization",
         "policy activation",
@@ -19,8 +12,34 @@
         "post-load filtering",
         "logging and audit delivery"
     ],
-    "runtime_dependencies": [
-        "php:^8.5",
-        "ext-json:*"
-    ]
+    "capabilities": [
+        {
+            "id": "business-policy.semantics",
+            "title": "Closed bounded record policy language, deterministic evaluation, field disclosure and immutable access plans.",
+            "description": "Closed bounded record policy language, deterministic evaluation, field disclosure and immutable access plans.",
+            "symbols": [
+                "Kumwe\\BusinessPolicy\\Application\\BusinessRecordAccessPlan",
+                "Kumwe\\BusinessPolicy\\Application\\FieldAccessUsage",
+                "Kumwe\\BusinessPolicy\\Application\\FieldDisclosurePlan",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBoolean",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBooleanOperator",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparison",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparisonOperator",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyConstant",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyEvaluator",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyNullCheck",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySchema",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySet",
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyValueType"
+            ],
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md",
+                "docs/integration.md"
+            ]
+        }
+    ],
+    "native_requirements": null,
+    "deprecations": []
 }

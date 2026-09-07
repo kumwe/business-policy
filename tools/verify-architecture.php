@@ -23,7 +23,10 @@ foreach ($files as $file) {
     ++$count;
 }
 $services = json_decode(file_get_contents($root . '/resources/service-map/v1.json'), true, 512, JSON_THROW_ON_ERROR);
-if ($services['mode'] !== 'direct' || $services['provider'] !== null || $services['services'] !== []) {
+if (
+    $services['schema'] !== 'kumwe-package-service-map/v1'
+    || $services['config_provider'] !== null || $services['factories'] !== []
+) {
     throw new RuntimeException('The stateless evaluator and immutable values do not require a container provider.');
 }
 if ($count !== 14 || is_file($root . '/src/ConfigProvider.php')) {
