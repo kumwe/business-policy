@@ -94,7 +94,7 @@ ownership:
       sha256: "7b64637adad6a6c9067d39d1635f66d4748cc1423f0e1d318c6ec3172e9fa362"
     -
       path: "resources/service-map/v1.json"
-      sha256: "26559dbab6c4a26f6a47911fe23fb87d5a1c8bceb89109bde65b5b934c34a92b"
+      sha256: "8361cc187e2dd3093e748290d2ccf7b52d53ae6273b2100980eae82e3a5b92e7"
   intentionally_excluded:
     - "App access controllers, administration services and DB query compilers"
     - "SDK other public SPIs"
