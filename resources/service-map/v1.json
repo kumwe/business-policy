@@ -1,10 +1,11 @@
 {
-  "schema": "kumwe-service-map/v1",
-  "package": "kumwe/business-policy",
-  "mode": "direct",
-  "provider": null,
-  "services": {},
-  "aliases": {},
-  "configuration": {},
-  "provider_absence_reason": "All values are directly constructed. RecordPolicyEvaluator is stateless and has no collaborators. Database compilers and active registries remain host-owned."
+    "schema": "kumwe-service-map/v1",
+    "package": "kumwe/business-policy",
+    "mode": "direct",
+    "provider": null,
+    "services": [],
+    "aliases": [],
+    "configuration": [],
+    "provider_absence_reason": "All values are directly constructed. RecordPolicyEvaluator is stateless and has no collaborators. Database compilers and active registries remain host-owned.",
+    "release": "0.1.1"
 }

@@ -114,7 +114,9 @@ final class RecordPolicyEvaluator
     private function compare(RecordPolicyValueType $type, mixed $actual, string|int|bool $expected): ?int
     {
         return match ($type) {
-            RecordPolicyValueType::String => is_string($actual) ? strcmp($actual, (string) $expected) : null,
+            RecordPolicyValueType::String => is_string($actual)
+                && strlen($actual) <= 4096
+                && preg_match('//u', $actual) === 1 ? strcmp($actual, (string) $expected) : null,
             RecordPolicyValueType::Integer => is_int($actual) ? $actual <=> (int) $expected : null,
             RecordPolicyValueType::Boolean => is_bool($actual) ? $actual <=> (bool) $expected : null,
             RecordPolicyValueType::Decimal => $this->decimal($actual, (string) $expected),
