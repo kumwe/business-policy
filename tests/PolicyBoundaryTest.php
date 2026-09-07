@@ -24,6 +24,27 @@ use PHPUnit\Framework\TestCase;
 
 final class PolicyBoundaryTest extends TestCase
 {
+    public function testMalformedRuntimeStringsNeverSatisfyAnInequality(): void
+    {
+        $evaluator = new RecordPolicyEvaluator();
+        $notEqual = new RecordPolicyComparison('value', RecordPolicyComparisonOperator::NotEqual,
+            RecordPolicyValueType::String, 'allowed');
+        foreach (["\xff", "truncated\xc3", str_repeat('x', 4097)] as $value) {
+            self::assertFalse($evaluator->evaluate($notEqual, ['value' => $value]));
+        }
+        self::assertTrue($evaluator->evaluate($notEqual, ['value' => str_repeat('x', 4096)]));
+        self::assertTrue($evaluator->evaluate($notEqual, ['value' => 'Ångström']));
+    }
+
+    public function testOperationNamesHaveAnExactByteBound(): void
+    {
+        $build = static fn (string $operation) => new BusinessRecordAccessPlan('record:1', $operation,
+            new RecordPolicySet(new RecordPolicySchema([])), new FieldDisclosurePlan(), str_repeat('a', 64));
+        self::assertSame(127, strlen($build('record.' . str_repeat('a', 120))->operation));
+        $this->expectException(InvalidArgumentException::class);
+        $build('record.' . str_repeat('a', 121));
+    }
+
     #[DataProvider('invalidLiterals')]
     public function testInvalidLiteralsAreRejected(string $type, mixed $literal): void
     {

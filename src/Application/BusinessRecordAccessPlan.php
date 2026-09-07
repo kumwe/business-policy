@@ -105,7 +105,7 @@ final readonly class BusinessRecordAccessPlan
         if (preg_match('/^[a-z0-9][a-z0-9._:-]{0,190}$/D', $resourceIdentifier) !== 1) {
             throw new InvalidArgumentException('A business-record access resource identifier is invalid.');
         }
-        if (preg_match('/^[a-z][a-z0-9]*(?:\.[a-z0-9_]+)+$/D', $operation) !== 1) {
+        if (strlen($operation) > 127 || preg_match('/^[a-z][a-z0-9]*(?:\.[a-z0-9_]+)+$/D', $operation) !== 1) {
             throw new InvalidArgumentException('A business-record access operation is invalid.');
         }
         $durableAuthorizationFingerprint ??= $authorizationFingerprint;

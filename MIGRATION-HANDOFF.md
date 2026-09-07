@@ -68,7 +68,7 @@ target:
   repository: https://github.com/kumwe/business-policy
   artifact_identity: kumwe/business-policy
   canonical_namespace_or_abi: Kumwe\BusinessPolicy
-  branch: agent/business-policy-boundary-gates-v2
+  branch: codex/extraction-readiness-20260907
   pull_request: https://github.com/kumwe/business-policy/pull/2
 ownership:
   responsibility: Bounded policy ASTs and deterministic evaluation, explicit field disclosure and portable immutable
@@ -483,7 +483,7 @@ documentation:
   integration_or_consumer: docs/integration.md
   examples:
   - examples/policy.php
-  changelog_record: CHANGELOG.md / 0.1.0
+  changelog_record: CHANGELOG.md / 0.1.1
 release_expectations:
   version_policy: SemVer; current candidate record 0.1.0; actual release identity must be observed externally; consumers
     exact-pin pre-1.0

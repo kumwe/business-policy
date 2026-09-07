@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Fail closed for malformed or oversized runtime string comparisons, including inequality. Bound access-plan operation names to 127 bytes and cover exact limits.
+- Refresh extraction handoff and library-owned validation evidence; App adoption remains a separate task.
+
 ## 0.1.0
 
 ### Added

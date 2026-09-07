@@ -1,26 +1,26 @@
 {
-  "schema": "kumwe-capabilities/v1",
-  "package": "kumwe/business-policy",
-  "release": "0.1.0",
-  "capabilities": [
-    "bounded-policy-ast",
-    "schema-reference-validation",
-    "deterministic-deny-precedence",
-    "exact-decimal-comparison",
-    "field-use-disclosure",
-    "access-plan-digests"
-  ],
-  "corpus": "resources/policy-corpus/v1.json",
-  "non_responsibilities": [
-    "final authorization",
-    "policy activation",
-    "attribute loading",
-    "database query compilation",
-    "post-load filtering",
-    "logging and audit delivery"
-  ],
-  "runtime_dependencies": [
-    "php:^8.5",
-    "ext-json:*"
-  ]
+    "schema": "kumwe-capabilities/v1",
+    "package": "kumwe/business-policy",
+    "release": "0.1.1",
+    "capabilities": [
+        "bounded-policy-ast",
+        "schema-reference-validation",
+        "deterministic-deny-precedence",
+        "exact-decimal-comparison",
+        "field-use-disclosure",
+        "access-plan-digests"
+    ],
+    "corpus": "resources/policy-corpus/v1.json",
+    "non_responsibilities": [
+        "final authorization",
+        "policy activation",
+        "attribute loading",
+        "database query compilation",
+        "post-load filtering",
+        "logging and audit delivery"
+    ],
+    "runtime_dependencies": [
+        "php:^8.5",
+        "ext-json:*"
+    ]
 }
