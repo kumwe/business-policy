@@ -42,6 +42,9 @@ final readonly class RecordPolicyComparison implements RecordPolicyPredicate
         if (is_string($value) && strlen($value) > 4096) {
             throw new InvalidArgumentException('A record-policy literal exceeds 4096 bytes.');
         }
+        if (is_string($value) && preg_match('//u', $value) !== 1) {
+            throw new InvalidArgumentException('A record-policy literal must be valid UTF-8.');
+        }
         if (
             $valueType === RecordPolicyValueType::Decimal
             && preg_match('/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?$/D', (string) $value) !== 1

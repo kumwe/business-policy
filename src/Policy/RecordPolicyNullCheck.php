@@ -10,7 +10,7 @@ use Kumwe\BusinessPolicy\Policy\RecordPolicyPredicate;
 /**
  * Test whether a declared record field is null without overloading scalar comparison semantics.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final readonly class RecordPolicyNullCheck implements RecordPolicyPredicate
 {
@@ -22,7 +22,7 @@ final readonly class RecordPolicyNullCheck implements RecordPolicyPredicate
      *
      * @throws  InvalidArgumentException  When the field handle is malformed.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function __construct(public string $field, public bool $isNull = true)
     {
@@ -36,7 +36,7 @@ final readonly class RecordPolicyNullCheck implements RecordPolicyPredicate
      *
      * @return  array<string, mixed>  Canonical null-check predicate document.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function toArray(): array
     {
@@ -48,7 +48,7 @@ final readonly class RecordPolicyNullCheck implements RecordPolicyPredicate
      *
      * @return  int  Always one.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function operationCount(): int
     {
@@ -60,7 +60,7 @@ final readonly class RecordPolicyNullCheck implements RecordPolicyPredicate
      *
      * @return  int  Always one.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function depth(): int
     {

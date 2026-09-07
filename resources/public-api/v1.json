@@ -1,0 +1,886 @@
+{
+    "schema": "kumwe-package-public-api/v1",
+    "package": "kumwe/business-policy",
+    "release": "0.1.0",
+    "namespace": "Kumwe\\BusinessPolicy\\",
+    "symbols": {
+        "Kumwe\\BusinessPolicy\\Application\\BusinessRecordAccessPlan": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Application/BusinessRecordAccessPlan.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": {},
+            "properties": {
+                "authorizationFingerprint": {
+                    "type": "string",
+                    "static": false,
+                    "readonly": true
+                },
+                "fields": {
+                    "type": "Kumwe\\BusinessPolicy\\Application\\FieldDisclosurePlan",
+                    "static": false,
+                    "readonly": true
+                },
+                "operation": {
+                    "type": "string",
+                    "static": false,
+                    "readonly": true
+                },
+                "records": {
+                    "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySet",
+                    "static": false,
+                    "readonly": true
+                },
+                "resourceIdentifier": {
+                    "type": "string",
+                    "static": false,
+                    "readonly": true
+                }
+            },
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "resourceIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "operation",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "records",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySet",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "fields",
+                            "type": "Kumwe\\BusinessPolicy\\Application\\FieldDisclosurePlan",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "authorizationFingerprint",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "related",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "actions",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "durableAuthorizationFingerprint",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "allowsAction": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "action",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "digest": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "durableDigest": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "related": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "handle",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\BusinessPolicy\\Application\\BusinessRecordAccessPlan"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Application\\FieldAccessUsage": {
+            "kind": "enum",
+            "stability": "stable",
+            "file": "src/Application/FieldAccessUsage.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": {
+                "Aggregate": {
+                    "type": "string"
+                },
+                "Audit": {
+                    "type": "string"
+                },
+                "Create": {
+                    "type": "string"
+                },
+                "Detail": {
+                    "type": "string"
+                },
+                "Export": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "string"
+                },
+                "Include": {
+                    "type": "string"
+                },
+                "List": {
+                    "type": "string"
+                },
+                "Mcp": {
+                    "type": "string"
+                },
+                "PublicReference": {
+                    "type": "string"
+                },
+                "Relation": {
+                    "type": "string"
+                },
+                "Report": {
+                    "type": "string"
+                },
+                "Search": {
+                    "type": "string"
+                },
+                "Sort": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "properties": {},
+            "methods": {},
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Application\\FieldDisclosurePlan": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Application/FieldDisclosurePlan.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": {},
+            "properties": {},
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "allowed",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "allows": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "usage",
+                            "type": "Kumwe\\BusinessPolicy\\Application\\FieldAccessUsage",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "fields": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "usage",
+                            "type": "Kumwe\\BusinessPolicy\\Application\\FieldAccessUsage",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBoolean": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyBoolean.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate"
+            ],
+            "constants": {},
+            "properties": {
+                "children": {
+                    "type": "array",
+                    "static": false,
+                    "readonly": true
+                },
+                "operator": {
+                    "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBooleanOperator",
+                    "static": false,
+                    "readonly": true
+                }
+            },
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "operator",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBooleanOperator",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "children",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "depth": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "operationCount": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBooleanOperator": {
+            "kind": "enum",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyBooleanOperator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": {
+                "All": {
+                    "type": "string"
+                },
+                "Any": {
+                    "type": "string"
+                }
+            },
+            "properties": {},
+            "methods": {},
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparison": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyComparison.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate"
+            ],
+            "constants": {},
+            "properties": {
+                "field": {
+                    "type": "string",
+                    "static": false,
+                    "readonly": true
+                },
+                "operator": {
+                    "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparisonOperator",
+                    "static": false,
+                    "readonly": true
+                },
+                "value": {
+                    "type": "string|int|bool",
+                    "static": false,
+                    "readonly": true
+                },
+                "valueType": {
+                    "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyValueType",
+                    "static": false,
+                    "readonly": true
+                }
+            },
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "operator",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparisonOperator",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "valueType",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyValueType",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "value",
+                            "type": "string|int|bool",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "depth": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "operationCount": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparisonOperator": {
+            "kind": "enum",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyComparisonOperator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": {
+                "Equal": {
+                    "type": "string"
+                },
+                "GreaterThan": {
+                    "type": "string"
+                },
+                "GreaterThanOrEqual": {
+                    "type": "string"
+                },
+                "LessThan": {
+                    "type": "string"
+                },
+                "LessThanOrEqual": {
+                    "type": "string"
+                },
+                "NotEqual": {
+                    "type": "string"
+                }
+            },
+            "properties": {},
+            "methods": {},
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyConstant": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyConstant.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate"
+            ],
+            "constants": {},
+            "properties": {
+                "value": {
+                    "type": "bool",
+                    "static": false,
+                    "readonly": true
+                }
+            },
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "bool",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "depth": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "operationCount": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyEvaluator": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyEvaluator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": {},
+            "properties": {},
+            "methods": {
+                "allows": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "policy",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySet",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "evaluate": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "predicate",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "bool"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyNullCheck": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyNullCheck.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate"
+            ],
+            "constants": {},
+            "properties": {
+                "field": {
+                    "type": "string",
+                    "static": false,
+                    "readonly": true
+                },
+                "isNull": {
+                    "type": "bool",
+                    "static": false,
+                    "readonly": true
+                }
+            },
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "isNull",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "depth": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "operationCount": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate": {
+            "kind": "interface",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyPredicate.php",
+            "abstract": false,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": {},
+            "properties": {},
+            "methods": {
+                "depth": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "operationCount": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySchema": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicySchema.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": {},
+            "properties": {},
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "fields",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "assertPredicate": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "predicate",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "type": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyValueType"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySet": {
+            "kind": "class",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicySet.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": {},
+            "properties": {
+                "allows": {
+                    "type": "array",
+                    "static": false,
+                    "readonly": true
+                },
+                "denies": {
+                    "type": "array",
+                    "static": false,
+                    "readonly": true
+                },
+                "schema": {
+                    "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySchema",
+                    "static": false,
+                    "readonly": true
+                }
+            },
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySchema",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "allows",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "denies",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": null
+                },
+                "allows": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "toArray": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            },
+            "deprecated": null
+        },
+        "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyValueType": {
+            "kind": "enum",
+            "stability": "stable",
+            "file": "src/Policy/RecordPolicyValueType.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": {
+                "Boolean": {
+                    "type": "string"
+                },
+                "Decimal": {
+                    "type": "string"
+                },
+                "Integer": {
+                    "type": "string"
+                },
+                "String": {
+                    "type": "string"
+                },
+                "Temporal": {
+                    "type": "string"
+                }
+            },
+            "properties": {},
+            "methods": {},
+            "deprecated": null
+        }
+    },
+    "extension_points": [],
+    "digest_of": "src"
+}

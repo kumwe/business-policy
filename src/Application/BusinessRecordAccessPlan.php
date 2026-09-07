@@ -17,7 +17,7 @@ use Kumwe\BusinessPolicy\Application\FieldDisclosurePlan;
  * never interprets roles or capabilities itself. The digest binds cursors and idempotent work to this
  * exact decision so a changed policy cannot resume an older view of the data.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final readonly class BusinessRecordAccessPlan
 {
@@ -29,7 +29,7 @@ final readonly class BusinessRecordAccessPlan
      * authorization merely because its seventeenth target needs its own row and disclosure policy.
      *
      * @var    int
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private const MAX_RELATED_PLANS = 384;
 
@@ -37,7 +37,7 @@ final readonly class BusinessRecordAccessPlan
      * Explicit target plans keyed by relation or entity-reference handle.
      *
      * @var    array<string, self>
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private array $related;
 
@@ -45,7 +45,7 @@ final readonly class BusinessRecordAccessPlan
      * Canonically ordered action handles explicitly granted by this plan.
      *
      * @var    list<string>
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private array $actions;
 
@@ -53,7 +53,7 @@ final readonly class BusinessRecordAccessPlan
      * Stable digest of every authorization input in this plan.
      *
      * @var    string
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private string $digest;
 
@@ -61,7 +61,7 @@ final readonly class BusinessRecordAccessPlan
      * Credential-independent digest used only by durable queued work.
      *
      * @var    string
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private string $durableDigest;
 
@@ -69,12 +69,12 @@ final readonly class BusinessRecordAccessPlan
      * Approval-bound authorization and policy fingerprint used only by the durable digest.
      *
      * @var    string
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private string $durableAuthorizationFingerprint;
 
     /**
-     * @param   string               $resourceIdentifier               Business-definition UUID this plan protects.
+     * @param   string               $resourceIdentifier               Stable resource identifier this plan protects.
      * @param   string               $operation                        Dotted operation identifier being authorized.
      * @param   RecordPolicySet      $records                          Bounded row policy with default-deny semantics.
      * @param   FieldDisclosurePlan  $fields                           Explicit per-use field permissions.
@@ -90,7 +90,7 @@ final readonly class BusinessRecordAccessPlan
      *          bounds are invalid.
      * @throws  JsonException  When the canonical plan document cannot be encoded.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function __construct(
         public string $resourceIdentifier,
@@ -160,7 +160,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  self|null  Explicit target plan, or null when traversal is denied.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function related(string $handle): ?self
     {
@@ -174,7 +174,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  bool  True only for a listed action.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function allowsAction(string $action): bool
     {
@@ -186,7 +186,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  string  Lowercase SHA-256 digest.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function digest(): string
     {
@@ -202,7 +202,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  string  Lowercase SHA-256 digest.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function durableDigest(): string
     {
@@ -214,7 +214,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  array<string, mixed>  Deterministic authorization decision.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function toArray(): array
     {
@@ -234,7 +234,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  array<string, mixed>  Deterministic credential-independent authorization decision.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private function toDurableArray(): array
     {
@@ -254,7 +254,7 @@ final readonly class BusinessRecordAccessPlan
      *
      * @return  int  Zero for a leaf; otherwise the longest edge count.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private function relationDepth(): int
     {

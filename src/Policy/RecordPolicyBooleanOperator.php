@@ -7,13 +7,13 @@ namespace Kumwe\BusinessPolicy\Policy;
 /**
  * Boolean composition available to a record-policy expression.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 enum RecordPolicyBooleanOperator: string
 {
-    /** Every child predicate must hold. @since 2.0.0 */
+    /** Every child predicate must hold. @since 0.1.0 */
     case All = 'all';
 
-    /** At least one child predicate must hold. @since 2.0.0 */
+    /** At least one child predicate must hold. @since 0.1.0 */
     case Any = 'any';
 }

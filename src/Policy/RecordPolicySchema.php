@@ -12,7 +12,7 @@ use Kumwe\BusinessPolicy\Policy\RecordPolicyValueType;
 /**
  * Closed field/type vocabulary against which a record-policy tree is validated.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final readonly class RecordPolicySchema
 {
@@ -20,7 +20,7 @@ final readonly class RecordPolicySchema
      * Canonical mapping of stable field handles to their exact policy scalar types.
      *
      * @var    array<string, RecordPolicyValueType>
-     * @since  2.0.0
+     * @since  0.1.0
      */
     private array $fields;
 
@@ -32,7 +32,7 @@ final readonly class RecordPolicySchema
      * @throws  InvalidArgumentException  When the schema is oversized, unordered data is malformed, or a
      *          field handle/type is invalid.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function __construct(array $fields)
     {
@@ -61,7 +61,7 @@ final readonly class RecordPolicySchema
      *
      * @throws  InvalidArgumentException  When a field is undeclared or a literal has another type.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function assertPredicate(RecordPolicyPredicate $predicate): void
     {
@@ -98,7 +98,7 @@ final readonly class RecordPolicySchema
      *
      * @throws  InvalidArgumentException  When the schema does not declare the field.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function type(string $field): RecordPolicyValueType
     {
@@ -111,7 +111,7 @@ final readonly class RecordPolicySchema
      *
      * @return  array<string, string>  Field handles keyed to scalar type identifiers.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function toArray(): array
     {
