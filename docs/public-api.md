@@ -1,5 +1,7 @@
 # Public API
 
+Runtime strings use the same valid-UTF-8 and 4096-byte domain as literals. Malformed or oversized runtime strings make every comparison false, including inequality. Access-plan operation names are limited to 127 bytes.
+
 The namespace is `Kumwe\BusinessPolicy`. The [machine-readable manifest](../resources/public-api/v1.json) inventories every stable type, method, property and enum. This document carries their source contracts. Constructors use PHP's declared argument types: wrong runtime argument types raise `TypeError`; grammar, shape, bounds and reference violations raise `InvalidArgumentException` as documented below. Enum `from(string)` raises `ValueError` for an unknown backing value; `tryFrom(string)` returns null; `cases()` returns all cases in declaration order.
 
 Value classes are final and readonly, the evaluator is final and stateless, and returned arrays are independent values. No method starts a transaction, loads records, logs, performs IO, persists data or chooses effective authority. Instances have no request/process-global state and can be safely reused with separately supplied inputs. The only external callbacks are a supplied `Stringable::__toString()` and methods on supplied `DateTimeImmutable` objects; exceptions from those trusted normalized values propagate. Constructor-bypassing restoration is unsupported.

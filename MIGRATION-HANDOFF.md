@@ -7,7 +7,7 @@ state: draft_pr_open
 source:
   app:
     repository: https://github.com/kumwe/app
-    baseline_commit: 24ecf956423c18933e824b43cea1bfb9127a79a9a9
+    baseline_commit: 24ecf956423c18933e824b43cea1bfb9127a79a9
     examined_paths:
     - src/Administrator/Http/Handler/AdministratorBusinessSecurityHandler.php
     - src/BusinessRecord/Application/BusinessRecordReadRepository.php
@@ -69,7 +69,7 @@ target:
   artifact_identity: kumwe/business-policy
   canonical_namespace_or_abi: Kumwe\BusinessPolicy
   branch: codex/extraction-readiness-20260907
-  pull_request: https://github.com/kumwe/business-policy/pull/2
+  pull_request: https://github.com/kumwe/business-policy/pull/3
 ownership:
   responsibility: Bounded policy ASTs and deterministic evaluation, explicit field disclosure and portable immutable
     access plans
@@ -87,11 +87,11 @@ ownership:
   next_consumer: https://github.com/kumwe/extension-sdk then https://github.com/kumwe/app
   public_manifests:
   - path: resources/public-api/v1.json
-    sha256: 2f4ef7ab14f1f42fe994aa0b593fd8f45886efd6c9787a912bc27ad0c82e2b46
+    sha256: ea84598cfc3e7149da76119bf20d6ca641d29490585c18297b611dd032b9fabd
   - path: resources/capabilities/v1.json
-    sha256: 1d06aa750f8b77f501ee35ec3b377c356f58af74c6da3a8882d26f1e99838a63
+    sha256: 9f391befbd525a5bf8122d7793678dc16de8d219953c1ede9927fa9c16d6e81b
   - path: resources/service-map/v1.json
-    sha256: 67d9ea123c8e96ae1e646293cf3e71d629b8845fcb8151f653ee485877f7afea
+    sha256: 1a32ed497f5517417ce5eb560f7b234709ba566e06b3f8991271a26d64c605fc
   intentionally_excluded:
   - App access controllers, administration services and DB query compilers
   - SDK other public SPIs
@@ -648,34 +648,30 @@ blockers:
 - Adoption waits for externally verified immutable package and SDK releases
 ---
 
-# Migration summary
+# Migration/implementation summary
 
-Fourteen types now have one intended portable owner: eight from App and six from Extension SDK. The initial source PR was observed merged; PR #2 completes boundaries, corpus, documentation and package gates. Physical source removal happens only in the separate SDK/App successors. The actual closure and all old/new mappings are recorded above; unsupported hypothetical types were not invented.
+14 types; bounded closed AST, exact deterministic scalar evaluation, deny precedence, all field-disclosure usages and access-plan values. Runtime malformed/oversized strings now fail closed even for inequality; operation names are bounded at 127 bytes. Existing 106-case semantic corpus remains versioned.
 
-# Public API and responsibility
+## Public API and responsibility
 
-[The public API](docs/public-api.md) documents all 14 types and 38 declared public methods. [Architecture](docs/architecture.md) records the bounded grammar, historical JSON profile and final host authority. An access plan is host-supplied data, not authorization authority.
+The symbol map above and [public API](docs/public-api.md) define every exported contract. [Architecture](docs/architecture.md) and [integration](docs/integration.md) retain the host boundaries.
 
-# Capability reuse and semantic inputs
+## Capability reuse/semantic input review
 
-The App and SDK source closures above were inspected by role and by symbol. App-specific decimal and identifier dependencies were replaced with the explicit portable inputs described in the compatibility document. No package dependency was selected, so no mutable checkout or missing upstream release attestation is relied on for runtime installation. The JSON profile is policy-specific and deliberately preserves existing digest bytes rather than claiming general canonical JSON ownership.
+No Kumwe runtime dependency. Canonical policy bytes are owned by this package; no new native policy execution or SDK/App edits are included. [Current release/dependency observations](docs/readiness-review.md) supersede obsolete initial-extraction publication blockers. No independent attestation is fabricated.
 
-# Consumer inventory
+## Consumer inventory and drift check
 
-The complete then-current matching production, configuration and test paths are listed above. Each symbol's source repository and path distinguishes SDK removal from App removal. SDK first exact-pins a verified Business Policy release and deletes the six mapped sources. Its other interfaces remain SDK-owned. App then imports the canonical symbols through a separately verified SDK/package dependency set.
+The source/consumer mappings above remain the adoption inventory. Compare every mapped file and public signature against the recorded full App baseline and current App before consumer changes. Any newer portable behavior goes upstream first. Preserve App authority, adapters and workflows.
 
-# Test ownership
+## Test ownership
 
-Portable App policy and access-plan assertions and SDK temporal-literal assertions are covered in this package. Boundary/corpus tests add exact-decimal, malformed-input, recursion, cycles, reference, per-use disclosure and canonical-byte checks. App preserves final-authority contract tests, DB compiler/security enforcement tests, tenant/site boundaries, policy-change races, counts, cursors, reports and exports. Do not delete an entire mixed test file when a host-responsibility assertion remains.
+Package tests own portable behavior, boundary/conformance, API and construction. App retains actual authorization, transaction atomicity, persistence, concurrency, recovery and delivery tests. Remove only duplicate portable implementation tests during the separate verified adoption.
 
-# Next-task execution
+## Next-task execution notes
 
-First verify release identity, shipped handoff, manifest/corpus hashes and the external attestation. Reconcile the six SDK sources and publish its downward-dependency successor; verify that release. Then update the listed App imports and Composer graph, remove eight mapped production sources and portable implementation-only assertions, and run the whole affected host integration train. No alias, remap, copied vendor implementation or PHP/native fallback is allowed. Query constraints stay inside DB query compilation, before loading/counting/paging.
+Review [PR #3](https://github.com/kumwe/business-policy/pull/3), require its complete package gate, then let the maintainer merge. Independently verify the published successor and exact dependency graph before App adoption. Existing published releases stay intact. This task does not implement the App runtime cutover.
 
-# Drift check
+## Validation recipe
 
-Compare each listed App/SDK source against its exact baseline commit before adoption. Route newer reusable behavior through a separate package PR and verified release. Recompute imports, source/public-signature closure and mixed-test boundaries rather than trusting this inventory after code changes. The capability-index path was not present at the inspected conventional location, so no hash is fabricated; locate its current governance record during adoption.
-
-# Validation recipe and observed local results
-
-At draft creation, PHP 8.5.10 passed 167 PHPUnit tests / 887 assertions, PHPStan maximum level, PSR-12, syntax, reflected API and architecture gates. The final recipe is `composer check`, including security audit, archive-file integrity, an isolated no-dev authoritative-classmap install, examples and all release-fixture suites. Final-head results are recorded in PR evidence after this handoff commit. Exact tested commit/tree/archive and future release facts belong in external attestations, never this embedded record.
+Run `composer check` and the repository release automation regressions. Runtime suites, strict static analysis, coding standards, manifest/API checks and the no-dev authoritative archive consumer remain required. Final tested source and archive identities belong in external CI/attestation evidence.
