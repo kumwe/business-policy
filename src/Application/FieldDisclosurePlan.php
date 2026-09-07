@@ -41,7 +41,7 @@ final readonly class FieldDisclosurePlan
         $normalized = [];
         $total = 0;
         foreach (FieldAccessUsage::cases() as $usage) {
-            $fields = $allowed[$usage->value] ?? [];
+            $fields = array_key_exists($usage->value, $allowed) ? $allowed[$usage->value] : [];
             if (!is_array($fields) || !array_is_list($fields) || count($fields) > 256) {
                 throw new InvalidArgumentException('A field-disclosure usage has an invalid field list.');
             }

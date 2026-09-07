@@ -171,11 +171,11 @@ final class RecordPolicyTest extends TestCase
             RecordPolicyValueType::String,
             'actor:one',
         );
+        $this->expectException(InvalidArgumentException::class);
         for ($depth = 0; $depth < 8; ++$depth) {
             $predicate = new RecordPolicyBoolean(RecordPolicyBooleanOperator::All, [$predicate]);
         }
 
-        $this->expectException(InvalidArgumentException::class);
         new RecordPolicySet($schema, [$predicate]);
     }
 

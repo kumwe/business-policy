@@ -1,0 +1,30 @@
+{
+  "schema": "kumwe-policy-canonical/v1",
+  "document": {
+    "schema": {
+      "enabled": "boolean",
+      "label": "string"
+    },
+    "allows": [
+      {
+        "type": "comparison",
+        "field": "label",
+        "operator": "equal",
+        "value_type": "string",
+        "value": "\u00e9/a"
+      },
+      {
+        "type": "constant",
+        "value": true
+      }
+    ],
+    "denies": [
+      {
+        "type": "constant",
+        "value": false
+      }
+    ]
+  },
+  "json": "{\"schema\":{\"enabled\":\"boolean\",\"label\":\"string\"},\"allows\":[{\"type\":\"comparison\",\"field\":\"label\",\"operator\":\"equal\",\"value_type\":\"string\",\"value\":\"\\u00e9/a\"},{\"type\":\"constant\",\"value\":true}],\"denies\":[{\"type\":\"constant\",\"value\":false}]}",
+  "sha256": "6b8cec89d6e5e1ed7775eccafaea81f77b498a1a7d8d5765e676c3fae9d09fbe"
+}

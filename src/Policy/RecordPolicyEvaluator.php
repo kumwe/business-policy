@@ -15,7 +15,7 @@ use Stringable;
 /**
  * In-memory interpreter for the same closed record-policy AST persistence compilers consume.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final class RecordPolicyEvaluator
 {
@@ -27,7 +27,7 @@ final class RecordPolicyEvaluator
      *
      * @return  bool  True only when at least one allow and no deny evaluates true.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function allows(RecordPolicySet $policy, array $values): bool
     {
@@ -56,7 +56,7 @@ final class RecordPolicyEvaluator
      *
      * @return  bool  Definite truth value; comparisons with null or a mismatched runtime type are false.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function evaluate(RecordPolicyPredicate $predicate, array $values): bool
     {
@@ -109,12 +109,12 @@ final class RecordPolicyEvaluator
      *
      * @return  int|null  Three-way comparison, or null when the stored value has another type.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private function compare(RecordPolicyValueType $type, mixed $actual, string|int|bool $expected): ?int
     {
         return match ($type) {
-            RecordPolicyValueType::String => is_string($actual) ? $actual <=> (string) $expected : null,
+            RecordPolicyValueType::String => is_string($actual) ? strcmp($actual, (string) $expected) : null,
             RecordPolicyValueType::Integer => is_int($actual) ? $actual <=> (int) $expected : null,
             RecordPolicyValueType::Boolean => is_bool($actual) ? $actual <=> (bool) $expected : null,
             RecordPolicyValueType::Decimal => $this->decimal($actual, (string) $expected),
@@ -130,7 +130,7 @@ final class RecordPolicyEvaluator
      *
      * @return  int|null  Exact chronological comparison, or null for another runtime type.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private function temporal(mixed $actual, string $expected): ?int
     {
@@ -171,14 +171,18 @@ final class RecordPolicyEvaluator
      *
      * @return  int|null  Exact comparison, or null for a non-decimal stored value.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private function decimal(mixed $actual, string $expected): ?int
     {
         if ($actual instanceof Stringable) {
             $actual = (string) $actual;
         }
-        if (!is_string($actual) || preg_match('/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?$/D', $actual) !== 1) {
+        if (
+            !is_string($actual)
+            || strlen($actual) > 4096
+            || preg_match('/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?$/D', $actual) !== 1
+        ) {
             return null;
         }
         $parts = static function (string $value): array {
@@ -204,11 +208,11 @@ final class RecordPolicyEvaluator
         }
         $comparison = strlen($leftInteger) <=> strlen($rightInteger);
         if ($comparison === 0) {
-            $comparison = $leftInteger <=> $rightInteger;
+            $comparison = strcmp($leftInteger, $rightInteger);
         }
         if ($comparison === 0) {
             $scale = max(strlen($leftFraction), strlen($rightFraction));
-            $comparison = str_pad($leftFraction, $scale, '0') <=> str_pad($rightFraction, $scale, '0');
+            $comparison = strcmp(str_pad($leftFraction, $scale, '0'), str_pad($rightFraction, $scale, '0'));
         }
 
         return $leftNegative ? -$comparison : $comparison;

@@ -14,7 +14,7 @@ use Kumwe\BusinessPolicy\Policy\RecordPolicyPredicate;
  * At least one allow must match and no deny may match. Consequently an empty allow list denies every
  * record, while a matching deny always overrides a matching allow.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final readonly class RecordPolicySet
 {
@@ -22,7 +22,7 @@ final readonly class RecordPolicySet
      * Canonically ordered predicates of which at least one must match.
      *
      * @var    list<RecordPolicyPredicate>
-     * @since  2.0.0
+     * @since  0.1.0
      */
     public array $allows;
 
@@ -30,7 +30,7 @@ final readonly class RecordPolicySet
      * Canonically ordered predicates any one of which overrides an allow.
      *
      * @var    list<RecordPolicyPredicate>
-     * @since  2.0.0
+     * @since  0.1.0
      */
     public array $denies;
 
@@ -44,7 +44,7 @@ final readonly class RecordPolicySet
      * @throws  InvalidArgumentException  When policy counts, total operations, depth, fields, or types exceed bounds.
      * @throws  JsonException  When canonical ordering cannot encode a predicate.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function __construct(
         public RecordPolicySchema $schema,
@@ -81,7 +81,7 @@ final readonly class RecordPolicySet
      *
      * @return  bool  True only when an allow matches and no deny matches.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function allows(array $values): bool
     {
@@ -93,7 +93,7 @@ final readonly class RecordPolicySet
      *
      * @return  array<string, mixed>  Schema plus ordered allow and deny predicate documents.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function toArray(): array
     {
@@ -114,7 +114,7 @@ final readonly class RecordPolicySet
      *
      * @throws  JsonException  When a canonical predicate cannot be encoded.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private static function order(RecordPolicyPredicate $left, RecordPolicyPredicate $right): int
     {

@@ -9,7 +9,7 @@ use Kumwe\BusinessPolicy\Policy\RecordPolicyPredicate;
 /**
  * Explicit true or false leaf used when a policy intentionally covers every or no record.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final readonly class RecordPolicyConstant implements RecordPolicyPredicate
 {
@@ -18,7 +18,7 @@ final readonly class RecordPolicyConstant implements RecordPolicyPredicate
      *
      * @param  bool  $value  Truth value this leaf always produces.
      *
-     * @since  2.0.0
+     * @since  0.1.0
      */
     public function __construct(public bool $value)
     {
@@ -29,7 +29,7 @@ final readonly class RecordPolicyConstant implements RecordPolicyPredicate
      *
      * @return  array<string, mixed>  Canonical constant predicate document.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function toArray(): array
     {
@@ -41,7 +41,7 @@ final readonly class RecordPolicyConstant implements RecordPolicyPredicate
      *
      * @return  int  Always one.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function operationCount(): int
     {
@@ -53,7 +53,7 @@ final readonly class RecordPolicyConstant implements RecordPolicyPredicate
      *
      * @return  int  Always one.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function depth(): int
     {

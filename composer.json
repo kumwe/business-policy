@@ -44,7 +44,19 @@
             "@api",
             "@architecture",
             "@security",
-            "@clean-consumer"
+            "@clean-consumer",
+            "@autoload:smoke",
+            "@examples",
+            "@release:tests"
+        ],
+        "autoload:smoke": "php resources/toolchain/autoload-smoke.php",
+        "examples": "php examples/policy.php",
+        "release:tests": [
+            "bash tools/test-release-record.sh",
+            "bash tools/test-release-integrity.sh",
+            "bash tools/test-release-on-record.sh",
+            "bash tools/test-configure-release-repositories.sh",
+            "bash tools/test-release-dependencies.sh"
         ]
     },
     "config": {

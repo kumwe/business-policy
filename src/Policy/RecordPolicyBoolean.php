@@ -11,7 +11,7 @@ use Kumwe\BusinessPolicy\Policy\RecordPolicyPredicate;
 /**
  * Deterministic all-of or any-of composition over bounded policy children.
  *
- * @since  2.0.0
+ * @since  0.1.0
  */
 final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
 {
@@ -19,7 +19,7 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
      * Canonically ordered child predicates.
      *
      * @var    list<RecordPolicyPredicate>
-     * @since  2.0.0
+     * @since  0.1.0
      */
     public array $children;
 
@@ -32,7 +32,7 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
      * @throws  InvalidArgumentException  When the child list is empty, oversized, or contains another type.
      * @throws  JsonException  When a canonical child document cannot be encoded.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function __construct(public RecordPolicyBooleanOperator $operator, array $children)
     {
@@ -40,8 +40,20 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
             throw new InvalidArgumentException('A record-policy boolean node requires one to sixteen children.');
         }
         foreach ($children as $child) {
-            if (!$child instanceof RecordPolicyPredicate) {
+            if (
+                !$child instanceof RecordPolicyComparison
+                && !$child instanceof RecordPolicyConstant
+                && !$child instanceof RecordPolicyNullCheck
+                && !$child instanceof self
+            ) {
                 throw new InvalidArgumentException('A record-policy boolean node contains an invalid child.');
+            }
+        }
+        $operations = 1;
+        foreach ($children as $child) {
+            $operations += $child->operationCount();
+            if ($child->depth() >= 8 || $operations > 64) {
+                throw new InvalidArgumentException('A record-policy boolean tree exceeds its complexity bound.');
             }
         }
         usort($children, static fn (RecordPolicyPredicate $left, RecordPolicyPredicate $right): int =>
@@ -54,7 +66,7 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
      *
      * @return  array<string, mixed>  Canonical boolean predicate document.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function toArray(): array
     {
@@ -73,7 +85,7 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
      *
      * @return  int  Positive operation count for the complete subtree.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function operationCount(): int
     {
@@ -88,7 +100,7 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
      *
      * @return  int  Positive tree depth including this node.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     public function depth(): int
     {
@@ -107,7 +119,7 @@ final readonly class RecordPolicyBoolean implements RecordPolicyPredicate
      *
      * @throws  JsonException  When encoding fails.
      *
-     * @since   2.0.0
+     * @since   0.1.0
      */
     private static function canonical(RecordPolicyPredicate $predicate): string
     {

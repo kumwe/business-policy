@@ -1,0 +1,2082 @@
+{
+  "schema": "kumwe-policy-corpus/v1",
+  "profile": "php-policy-v1",
+  "cases": [
+    {
+      "id": "decimal-0-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "-0.000"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-1-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "-0.000"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-2-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "-0.000"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-3-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "-0.000"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-4-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "-0.000"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-5-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "-0.000"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-6-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.20"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-7-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.20"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-8-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.20"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-9-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.20"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-10-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.20"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-11-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.20"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-12-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.2001"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-13-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.2001"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-14-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.2001"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-15-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.2001"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-16-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.2001"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-17-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "-1.2"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-1.2001"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-18-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "9999999999999999999999999999999999999998"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "9999999999999999999999999999999999999999"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-19-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "9999999999999999999999999999999999999998"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "9999999999999999999999999999999999999999"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-20-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "9999999999999999999999999999999999999998"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "9999999999999999999999999999999999999999"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-21-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "9999999999999999999999999999999999999998"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "9999999999999999999999999999999999999999"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-22-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "9999999999999999999999999999999999999998"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "9999999999999999999999999999999999999999"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-23-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "9999999999999999999999999999999999999998"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "9999999999999999999999999999999999999999"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-24-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "0.123456789012345678901234567891"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0.123456789012345678901234567890"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-25-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "0.123456789012345678901234567891"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0.123456789012345678901234567890"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-26-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "0.123456789012345678901234567891"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0.123456789012345678901234567890"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-27-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "0.123456789012345678901234567891"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0.123456789012345678901234567890"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-28-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "0.123456789012345678901234567891"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0.123456789012345678901234567890"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-29-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "0.123456789012345678901234567891"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0.123456789012345678901234567890"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-30-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "9"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "10"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-31-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "9"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "10"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-32-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "9"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "10"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-33-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "9"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "10"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-34-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "9"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "10"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-35-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "9"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "10"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-36-equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-2"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-37-not_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-2"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-38-less_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-2"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-39-less_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-2"
+      },
+      "expected": true
+    },
+    {
+      "id": "decimal-40-greater_than",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-2"
+      },
+      "expected": false
+    },
+    {
+      "id": "decimal-41-greater_than_or_equal",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "-2"
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-42-equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": -42
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-43-not_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": -42
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-44-less_than",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": -42
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-45-less_than_or_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": -42
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-46-greater_than",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": -42
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-47-greater_than_or_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": -42
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-48-equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 17
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-49-not_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 17
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-50-less_than",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 17
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-51-less_than_or_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 17
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-52-greater_than",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 17
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-53-greater_than_or_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "integer",
+          "value": 17
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 17
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-54-equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "integer",
+          "value": 9223372036854775806
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 9223372036854775807
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-55-not_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 9223372036854775806
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 9223372036854775807
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-56-less_than",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than",
+          "value_type": "integer",
+          "value": 9223372036854775806
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 9223372036854775807
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-57-less_than_or_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "less_than_or_equal",
+          "value_type": "integer",
+          "value": 9223372036854775806
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 9223372036854775807
+      },
+      "expected": false
+    },
+    {
+      "id": "integer-58-greater_than",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than",
+          "value_type": "integer",
+          "value": 9223372036854775806
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 9223372036854775807
+      },
+      "expected": true
+    },
+    {
+      "id": "integer-59-greater_than_or_equal",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "greater_than_or_equal",
+          "value_type": "integer",
+          "value": 9223372036854775806
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 9223372036854775807
+      },
+      "expected": true
+    },
+    {
+      "id": "string-60-equal",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "string",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "01"
+      },
+      "expected": false
+    },
+    {
+      "id": "string-61-not_equal",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "01"
+      },
+      "expected": true
+    },
+    {
+      "id": "string-62-equal",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "string",
+          "value": "0e456"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0e123"
+      },
+      "expected": false
+    },
+    {
+      "id": "string-63-not_equal",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "0e456"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "0e123"
+      },
+      "expected": true
+    },
+    {
+      "id": "string-64-equal",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "string",
+          "value": "é"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "é"
+      },
+      "expected": true
+    },
+    {
+      "id": "string-65-not_equal",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "é"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "é"
+      },
+      "expected": false
+    },
+    {
+      "id": "boolean-66-equal",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "boolean",
+          "value": false
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": false
+      },
+      "expected": true
+    },
+    {
+      "id": "boolean-67-not_equal",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "boolean",
+          "value": false
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": false
+      },
+      "expected": false
+    },
+    {
+      "id": "boolean-68-equal",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "boolean",
+          "value": false
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": true
+      },
+      "expected": false
+    },
+    {
+      "id": "boolean-69-not_equal",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "boolean",
+          "value": false
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": true
+      },
+      "expected": true
+    },
+    {
+      "id": "mismatch-70",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-71",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": []
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-72",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": {}
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-73",
+      "schema": {
+        "value": "string"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "string",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 1.0
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-74",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 1
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-75",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 1
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": []
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-76",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 1
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": {}
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-77",
+      "schema": {
+        "value": "integer"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "integer",
+          "value": 1
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 1.0
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-78",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "boolean",
+          "value": true
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-79",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "boolean",
+          "value": true
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": []
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-80",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "boolean",
+          "value": true
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": {}
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-81",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "boolean",
+          "value": true
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 1.0
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-82",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-83",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": []
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-84",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": {}
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-85",
+      "schema": {
+        "value": "decimal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "decimal",
+          "value": "1"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 1.0
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-86",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "temporal",
+          "value": "2026-08-09"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-87",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "temporal",
+          "value": "2026-08-09"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": []
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-88",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "temporal",
+          "value": "2026-08-09"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": {}
+      },
+      "expected": false
+    },
+    {
+      "id": "mismatch-89",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "not_equal",
+          "value_type": "temporal",
+          "value": "2026-08-09"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": 1.0
+      },
+      "expected": false
+    },
+    {
+      "id": "null-90",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "null_check",
+          "field": "value",
+          "is_null": true
+        }
+      ],
+      "denies": [],
+      "values": {},
+      "expected": true
+    },
+    {
+      "id": "null-91",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "null_check",
+          "field": "value",
+          "is_null": false
+        }
+      ],
+      "denies": [],
+      "values": {},
+      "expected": false
+    },
+    {
+      "id": "null-92",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "null_check",
+          "field": "value",
+          "is_null": true
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": true
+    },
+    {
+      "id": "null-93",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "null_check",
+          "field": "value",
+          "is_null": false
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": null
+      },
+      "expected": false
+    },
+    {
+      "id": "null-94",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "null_check",
+          "field": "value",
+          "is_null": true
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": false
+      },
+      "expected": false
+    },
+    {
+      "id": "null-95",
+      "schema": {
+        "value": "boolean"
+      },
+      "allows": [
+        {
+          "type": "null_check",
+          "field": "value",
+          "is_null": false
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": false
+      },
+      "expected": true
+    },
+    {
+      "id": "precedence-96",
+      "schema": {},
+      "allows": [],
+      "denies": [],
+      "values": {},
+      "expected": false
+    },
+    {
+      "id": "precedence-97",
+      "schema": {},
+      "allows": [
+        {
+          "type": "constant",
+          "value": true
+        }
+      ],
+      "denies": [],
+      "values": {},
+      "expected": true
+    },
+    {
+      "id": "precedence-98",
+      "schema": {},
+      "allows": [
+        {
+          "type": "constant",
+          "value": true
+        }
+      ],
+      "denies": [
+        {
+          "type": "constant",
+          "value": true
+        }
+      ],
+      "values": {},
+      "expected": false
+    },
+    {
+      "id": "precedence-99",
+      "schema": {},
+      "allows": [
+        {
+          "type": "constant",
+          "value": true
+        }
+      ],
+      "denies": [
+        {
+          "type": "constant",
+          "value": false
+        }
+      ],
+      "values": {},
+      "expected": true
+    },
+    {
+      "id": "precedence-100",
+      "schema": {},
+      "allows": [
+        {
+          "type": "constant",
+          "value": false
+        }
+      ],
+      "denies": [],
+      "values": {},
+      "expected": false
+    },
+    {
+      "id": "precedence-101",
+      "schema": {},
+      "allows": [
+        {
+          "type": "constant",
+          "value": false
+        },
+        {
+          "type": "constant",
+          "value": true
+        }
+      ],
+      "denies": [
+        {
+          "type": "constant",
+          "value": false
+        }
+      ],
+      "values": {},
+      "expected": true
+    },
+    {
+      "id": "temporal-102",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "temporal",
+          "value": "2026-08-09T10:30:15.120000Z"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "2026-08-09T12:30:15.120000+02:00"
+      },
+      "expected": true
+    },
+    {
+      "id": "temporal-103",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "temporal",
+          "value": "2026-03-02"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "2026-02-30T00:00:00.000000+00:00"
+      },
+      "expected": false
+    },
+    {
+      "id": "temporal-104",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "temporal",
+          "value": "12:30:15"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "2026-08-09T12:30:15.120000+00:00"
+      },
+      "expected": false
+    },
+    {
+      "id": "temporal-105",
+      "schema": {
+        "value": "temporal"
+      },
+      "allows": [
+        {
+          "type": "comparison",
+          "field": "value",
+          "operator": "equal",
+          "value_type": "temporal",
+          "value": "12:30:15"
+        }
+      ],
+      "denies": [],
+      "values": {
+        "value": "2026-08-09T12:30:15.000000+00:00"
+      },
+      "expected": true
+    }
+  ]
+}
