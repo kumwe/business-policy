@@ -167,6 +167,7 @@ $consumerMetadata = [
     'license' => 'proprietary',
     'require' => ['kumwe/business-policy' => $release],
     'repositories' => [
+        'packagist.org' => false,
         ['type' => 'package', 'package' => $metadata],
     ],
     'config' => ['allow-plugins' => false],
