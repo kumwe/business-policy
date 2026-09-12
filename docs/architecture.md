@@ -1,8 +1,8 @@
 # Architecture and semantic ownership
 
-The package has 14 public types: six portable SDK types and eight App types. The candidate estimate of about 16 did not match the current closure. No independent attribute/resource-reference, findings/error or compiler implementation exists in the examined baseline. Field references remain strings validated against `RecordPolicySchema`; resource references remain opaque access-plan identifiers. Inventing a new policy authority or compiler would exceed extraction scope.
+The package exports 14 public types for record-policy grammar, deterministic evaluation, field disclosure and immutable access plans. Field references are strings validated against `RecordPolicySchema`; resource references are opaque access-plan identifiers. Query compilers and policy authority belong to the host.
 
-App owns policy draft/publish/activation, trusted actor and resource loading, active version selection, DB predicates, final deny/allow/step-up decisions, lifecycle, logging and delivery. The SDK successor depends downward on Business Policy and deletes its six duplicated types after release verification. App adoption is a separate task, so physical duplicates remain until that handoff is executed. No alias or shadow compatibility layer is supplied.
+Core and consuming applications own policy draft/publish/activation, trusted actor and resource loading, active version selection, DB predicates, final deny/allow/step-up decisions, lifecycle, logging and delivery. Extension SDK consumers depend downward on Business Policy for these contracts. This package supplies no aliases or shadow implementations of consumer types. See the [consumer contract](integration.md) for ownership and integration checks.
 
 The grammar is closed to four node classes. Final readonly construction plus rejection of foreign predicate implementations prevents mutable/cyclic policy trees through the supported API. Boolean construction checks depth and operation count before sorting or serializing child documents. Reflection/unserialization bypasses of constructors are unsupported inputs. Related access plans are likewise constructed from existing immutable plans with a two-hop maximum.
 
@@ -10,6 +10,6 @@ Serialization is the existing versioned PHP policy profile, not RFC 8785. `json_
 
 The language-neutral corpus is `resources/policy-corpus/v1.json`. It covers all comparison operators, precision-sensitive decimals, negative zero, strict scalar types, missing/null values, deny precedence, temporal zones and invalid temporal values. PHP tests interpret its declarative nodes and prove permutation invariance. Boundary tests separately cover recursion, operations, custom cyclic nodes, schema references, malformed literals, all disclosure usages, and related-plan limits.
 
-There is no native dependency or production fallback selector. Future native acceleration requires a separately versioned compiled bounded program and the corpus; it cannot load records or become authorization authority. The current interpreter is the primary extracted implementation.
+There is no native dependency or production fallback selector. Future native acceleration requires a separately versioned compiled bounded program and the corpus; it cannot load records or become authorization authority. The PHP interpreter is the current implementation.
 
 `composer api` checks reflected signatures against the manifest. `composer architecture` enforces package namespace, dependency-free runtime closure, direct construction and absence of host/SDK/DB/IO imports. `composer clean-consumer` compares the ZIP exactly against approved source/document/resource files and exercises a fresh no-dev authoritative install.
