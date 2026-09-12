@@ -44,6 +44,7 @@
             "@api",
             "@architecture",
             "@manifests",
+            "@manifests:tests",
             "@security",
             "@clean-consumer",
             "@autoload:smoke",
@@ -59,7 +60,8 @@
             "bash tools/test-configure-release-repositories.sh",
             "bash tools/test-release-dependencies.sh"
         ],
-        "manifests": "php tools/verify-governed-manifests.php"
+        "manifests": "php tools/verify-governed-manifests.php",
+        "manifests:tests": "bash tools/test-governed-manifests.sh"
     },
     "config": {
         "sort-packages": true

@@ -1,9 +1,8 @@
 ---
-schema: "kumwe-migration-handoff/v2"
+schema: "kumwe-package-release-record/v1"
 artifact_kind: "framework_php"
 migration_id: "KUMWE-MIG-2026-022"
 change_set: "KUMWE-CS-2026-022"
-state: "draft_pr_open"
 source:
   app:
     repository: "https://github.com/kumwe/app"
@@ -62,15 +61,10 @@ source:
     - "php:^8.5"
     - "ext-json:*"
     - "kumwe/access-context and kumwe/canonical-json are permitted ceilings, not selected dependencies"
-  active_related_pull_requests:
-    - "https://github.com/kumwe/business-policy/pull/1 (observed merged)"
-    - "https://github.com/kumwe/business-policy/pull/2"
 target:
   repository: "https://github.com/kumwe/business-policy"
   artifact_identity: "kumwe/business-policy"
   canonical_namespace_or_abi: "Kumwe\\BusinessPolicy"
-  branch: "codex/extraction-readiness-20260907"
-  pull_request: "https://github.com/kumwe/business-policy/pull/3"
 ownership:
   responsibility: "Bounded policy ASTs and deterministic evaluation, explicit field disclosure and portable immutable access plans"
   non_responsibilities:
@@ -131,7 +125,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\Extension\\Spi\\BusinessSecurity\\Application\\FieldAccessUsage"
       new_fqcn: "Kumwe\\BusinessPolicy\\Application\\FieldAccessUsage"
@@ -158,7 +152,7 @@ framework_php:
         - "Update"
       exceptions: []
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\Extension\\Spi\\BusinessSecurity\\Application\\FieldDisclosurePlan"
       new_fqcn: "Kumwe\\BusinessPolicy\\Application\\FieldDisclosurePlan"
@@ -177,7 +171,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicyBoolean"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBoolean"
@@ -198,7 +192,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicyBooleanOperator"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyBooleanOperator"
@@ -212,7 +206,7 @@ framework_php:
         - "Any"
       exceptions: []
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\Extension\\Spi\\BusinessSecurity\\Policy\\RecordPolicyComparison"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparison"
@@ -235,7 +229,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\Extension\\Spi\\BusinessSecurity\\Policy\\RecordPolicyComparisonOperator"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyComparisonOperator"
@@ -253,7 +247,7 @@ framework_php:
         - "NotEqual"
       exceptions: []
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicyConstant"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyConstant"
@@ -273,7 +267,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicyEvaluator"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyEvaluator"
@@ -290,7 +284,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicyNullCheck"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyNullCheck"
@@ -311,7 +305,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\Extension\\Spi\\BusinessSecurity\\Policy\\RecordPolicyPredicate"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyPredicate"
@@ -326,7 +320,7 @@ framework_php:
       public_constants: []
       exceptions: []
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicySchema"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySchema"
@@ -345,7 +339,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\App\\BusinessSecurity\\Policy\\RecordPolicySet"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicySet"
@@ -366,7 +360,7 @@ framework_php:
         - "TypeError"
         - "JsonException"
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
     -
       old_fqcn: "Kumwe\\Extension\\Spi\\BusinessSecurity\\Policy\\RecordPolicyValueType"
       new_fqcn: "Kumwe\\BusinessPolicy\\Policy\\RecordPolicyValueType"
@@ -383,7 +377,7 @@ framework_php:
         - "Temporal"
       exceptions: []
       serialization_contract: "docs/architecture.md"
-      compatibility: "package-initial-profile; explicit extraction corrections in docs/security-compatibility.md"
+      compatibility: "Versioned policy profile; security boundaries in docs/security-compatibility.md"
   consumers:
     app_code:
       - "src/Administrator/Http/Handler/AdministratorBusinessSecurityHandler.php"
@@ -446,7 +440,7 @@ framework_php:
       - "immutable values: caller constructed"
       - "stateless evaluator: safely shared if host chooses"
     configuration_keys: []
-    provider_absence_reason: "No injected runtime service is exported. The evaluator has no collaborators; compilers and active registries remain App-owned."
+    provider_absence_reason: "No injected runtime service is exported. The evaluator has no collaborators; compilers and active registries remain host-owned."
 native_cpp: null
 php_extension: null
 tests:
@@ -469,7 +463,7 @@ tests:
   split_tests:
     - "App access-plan unit test retains host authority responsibility while portable plan assertions are package-owned"
   prohibited_duplicates:
-    - "App/SDK class behavior tests must be removed during their separate adoption, never in this package phase"
+    - "Consumers remove duplicate portable class behavior tests when adopting canonical package types; retain host integration coverage"
   corpora:
     - "resources/policy-corpus/v1.json (SHA-256 4534b98bfe121b2d9cf27cecc1990910c68db91708a60e3e135a058eca9d4419)"
     - "resources/policy-corpus/canonical-v1.json (SHA-256 412b7ad71b4a434cc842a677c93c6689cb0d8f78fd5824c02a2a31c281fb9f8d)"
@@ -483,7 +477,7 @@ documentation:
     - "examples/policy.php"
   changelog_record: "CHANGELOG.md / 0.1.1"
 release_expectations:
-  version_policy: "SemVer; current candidate record 0.1.0; actual release identity must be observed externally; consumers exact-pin pre-1.0"
+  version_policy: "SemVer; observe exact release identity externally; consumers exact-pin pre-1.0"
   expected_artifact_types:
     - "Composer source ZIP"
     - "GitHub immutable release/tag"
@@ -493,15 +487,14 @@ release_expectations:
     - "release integrity and dependency attestation checks"
   required_registry_or_installer: "Composer"
   required_external_attestation: true
-next_task:
-  phase_name: "Release verification, then Extension SDK dependency/duplicate-removal successor; App Phase 2 follows verified SDK release"
+consumer_contract:
   permitted_only_when:
-    - "human merges package PR"
+    - "package source passes its complete quality gate"
     - "immutable package publication observed"
     - "separate RELEASE-ATTESTATION.yaml verifies exact release and archive"
-    - "SDK downward dependency update released and verified before App composition"
+    - "the selected SDK release uses the same canonical package types"
   consumer_repository: "https://github.com/kumwe/app"
-  dependency_or_native_change: "Exact-pin verified kumwe/business-policy and compatible verified SDK release through Composer; no native dependency"
+  dependency_or_native_change: "Exact-pin verified kumwe/business-policy and a compatible verified SDK release through Composer; no native dependency"
   namespace_or_api_replacements:
     - "Kumwe\\App\\BusinessSecurity\\Application\\BusinessRecordAccessPlan => Kumwe\\BusinessPolicy\\Application\\BusinessRecordAccessPlan"
     - "Kumwe\\Extension\\Spi\\BusinessSecurity\\Application\\FieldAccessUsage => Kumwe\\BusinessPolicy\\Application\\FieldAccessUsage"
@@ -588,72 +581,82 @@ next_task:
   capability_index_changes:
     - "Record canonical package owner and link exact release evidence; do not claim roadmap completion"
   changelog_and_evidence_changes:
-    - "Record NRM-2026-022 adoption and integration-train evidence"
+    - "Record selected package and SDK versions, verified release identities and consumer integration evidence"
   verification_commands:
     - "composer validate --strict"
     - "composer audit --abandoned=fail"
     - "run full affected App unit/integration train"
     - "rg old policy/disclosure namespaces in source/config/tests and reject duplicates"
-concurrency:
-  likely_conflict_files:
-    - "App composer.json and composer.lock"
-    - "App BusinessSecurity/BusinessRecord imports"
-    - "SDK composer.json and src/Spi/BusinessSecurity"
-    - "App capability index and migration evidence ledger"
-  related_migrations:
-    - "KUMWE-MIG-2026-004"
-    - "KUMWE-MIG-2026-010"
-    - "KUMWE-MIG-2026-031"
-  ownership_conflicts:
-    - "Physical App/SDK duplicates intentionally await separate verified adoption"
-  integration_train: null
-  resolution_rule: "semantic-preservation"
 governance:
-  roadmap_source_sha256: "a202155ef1a65f5ab293d4f8397ebf4ac430db7f1e877c776bbe7851e6fe18d8"
-  roadmap_refs: []
-  non_roadmap_refs:
-    - "NRM-2026-022"
   completion_claim: false
 decisions:
-  - "14-type actual closure replaces approximate 16-type candidate scope"
-  - "No external Kumwe dependency selected: preserving the existing policy JSON profile avoids introducing an unverified canonicalization dependency"
+  - "The package exports 14 policy, disclosure and access-plan types"
+  - "No external Kumwe runtime dependency: the versioned policy JSON profile belongs to this package"
   - "Stateless evaluator is directly constructible; no empty ConfigProvider"
-  - "Early bounded/closed-tree validation, exact decimal digit ordering, UTF-8 and explicit disclosure shape refusals are initial-package corrections"
+  - "Bounded closed-tree validation, exact decimal digit ordering, UTF-8 and explicit disclosure shape refusals are compatibility contracts"
   - "Opaque resource string and normalized decimal/Stringable values replace host value dependencies"
-  - "No App/SDK edits, merge, release or adoption performed"
-blockers:
-  - "Adoption waits for externally verified immutable package and SDK releases"
+blockers: []
 ---
 
-## Migration/implementation summary
+# Package release record
 
-14 types; bounded closed AST, exact deterministic scalar evaluation, deny precedence, all field-disclosure usages and access-plan values. Runtime malformed/oversized strings now fail closed even for inequality; operation names are bounded at 127 bytes. Existing 106-case semantic corpus remains versioned.
+This record binds the package's public manifests, compatibility baseline, symbol
+mapping, dependency-injection contract and consumer test ownership. It uses
+`kumwe-package-release-record/v1`. Source paths and commit IDs identify the
+recorded baseline for compatibility review; they do not report the current state
+of another repository. Published release identities and verification results are
+observed externally.
+
+## Package contract
+
+The package provides 14 policy, disclosure and access-plan types. Core and other
+hosts own final authorization, active policy selection, data loading, database
+compilation, transactions, audit and delivery. See [host integration](integration.md).
 
 ## Public API and responsibility
 
-The symbol map above and [public API](docs/public-api.md) define every exported contract. [Architecture](docs/architecture.md) and [integration](docs/integration.md) retain the host boundaries.
+The symbol map above and [public API](public-api.md) define exported contracts.
+The [architecture](architecture.md) defines serialization and deterministic
+evaluation. Manifest paths in the front matter are repository-relative.
 
-## Capability reuse/semantic input review
+## Dependencies and semantic inputs
 
-No Kumwe runtime dependency. Canonical policy bytes are owned by this package; no new native policy execution or SDK/App edits are included. [Current release/dependency observations](docs/readiness-review.md) supersede obsolete initial-extraction publication blockers. No independent attestation is fabricated.
+Runtime requirements are PHP 8.5 and JSON, with no third-party runtime dependencies.
+The package owns its versioned policy JSON profile and language-neutral corpus.
+Other implementations run that corpus before claiming semantic compatibility.
 
-## Consumer inventory
+## Consumer contract
 
-The source/consumer mappings above remain the adoption inventory. Compare every mapped file and public signature against the recorded full App baseline and current App before consumer changes. Any newer portable behavior goes upstream first. Preserve App authority, adapters and workflows.
+The source and consumer mappings above describe the recorded compatibility
+baseline. Compare mapped files and signatures with the consumer's current source
+before updating imports, removing duplicate implementations or changing DI type
+hints. Preserve newer portable behavior in this package and host-specific behavior
+in the consuming application.
 
 ## Test ownership
 
-Package tests own portable behavior, boundary/conformance, API and construction. App retains actual authorization, transaction atomicity, persistence, concurrency, recovery and delivery tests. Remove only duplicate portable implementation tests during the separate verified adoption.
+Package tests own portable behavior, boundary/conformance, API and direct
+construction. Consumers retain authorization, query isolation, transaction
+atomicity, persistence, concurrency, recovery and delivery tests. See the
+[test ownership contract](integration.md#test-ownership).
 
-## Next-task execution notes
+## Consumer verification
 
-Review [PR #3](https://github.com/kumwe/business-policy/pull/3), require its complete package gate, then let the maintainer merge. Independently verify the published successor and exact dependency graph before App adoption. Existing published releases stay intact. This task does not implement the App runtime cutover.
+Pin an exact pre-1.0 release. Verify the published source, archive, manifest
+digests and a no-dev authoritative consumer installation, then run the affected
+consumer integration suites. When using Extension SDK, select a compatible
+verified SDK release that consumes the same canonical types.
 
-## Drift check
+## Compatibility and drift
 
-Reconcile mapped source and tests against the recorded App baseline and current App before any adoption.
-Newer portable behavior must move upstream first; preserve App authority, persistence and integration tests.
+Compare the source and tests against the recorded baseline before consumer
+changes. A package CI result does not establish consumer integration or roadmap
+completion. Immutable published tags, release evidence and historical changelog
+entries remain fixed.
 
-## Validation recipe and observed local results
+## Validation
 
-Run `composer check` and the repository release automation regressions. Runtime suites, strict static analysis, coding standards, manifest/API checks and the no-dev authoritative archive consumer remain required. Final tested source and archive identities belong in external CI/attestation evidence.
+Run `composer check`. The gate covers runtime behavior, strict static analysis,
+coding standards, manifest/API identity, archive contents, clean-consumer
+installation and release automation. Final tested source and artifact identities
+belong in external CI and release-attestation evidence.
